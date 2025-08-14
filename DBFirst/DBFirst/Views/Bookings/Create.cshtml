@@ -1,0 +1,53 @@
+﻿@model DBFirst.Models.Booking
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Memberid" class="control-label"></label>
+                <input asp-for="Memberid" class="form-control" />
+                <span asp-validation-for="Memberid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trainerid" class="control-label"></label>
+                <input asp-for="Trainerid" class="form-control" />
+                <span asp-validation-for="Trainerid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Facilityid" class="control-label"></label>
+                <input asp-for="Facilityid" class="form-control" />
+                <span asp-validation-for="Facilityid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bookingdate" class="control-label"></label>
+                <input asp-for="Bookingdate" class="form-control" />
+                <span asp-validation-for="Bookingdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Slottime" class="control-label"></label>
+                <input asp-for="Slottime" class="form-control" />
+                <span asp-validation-for="Slottime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

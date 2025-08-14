@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DBFirst.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Memberid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trainerid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Facilityid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bookingdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Slottime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memberid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trainerid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Facilityid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bookingdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slottime)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Bookingid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Bookingid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Bookingid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
