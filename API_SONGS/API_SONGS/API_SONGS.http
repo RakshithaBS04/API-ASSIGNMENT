@@ -1,0 +1,6 @@
+@API_SONGS_HostAddress = http://localhost:5277
+
+GET {{API_SONGS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
