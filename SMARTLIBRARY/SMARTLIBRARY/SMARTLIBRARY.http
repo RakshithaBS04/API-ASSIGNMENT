@@ -1,0 +1,6 @@
+@SMARTLIBRARY_HostAddress = http://localhost:5114
+
+GET {{SMARTLIBRARY_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
